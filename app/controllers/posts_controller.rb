@@ -29,22 +29,18 @@ class PostsController < ApplicationController
   def update
     if @post.update(post_params)
       redirect_to post_path
-      else
-        render :edit
-      end
+    else
+      render :edit
+    end
   end
 
-
-
+  def destroy
+    @post.destroy
+    redirect_to root_path
+  end
 
   
-end
-
-
-
-
-
-private
+  private
 
   def post_params
     params.require(:post).permit(:title, :catch_copy, :concept, :image).merge(user_id: current_user.id)
@@ -57,3 +53,6 @@ private
   def move_to_index
     redirect_to root_path unless current_user == @post.user
   end
+
+
+end
