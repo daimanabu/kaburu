@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+  before_action :set_post, except: [:index, :new, :create]
   
   def index
     @posts = Post.all
@@ -18,6 +19,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+
+  end
+
 
 
 
@@ -32,4 +37,8 @@ private
 
   def post_params
     params.require(:post).permit(:title, :catch_copy, :concept, :image).merge(user_id: current_user.id)
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
   end
