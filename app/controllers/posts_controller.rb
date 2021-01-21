@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   before_action :set_post, except: [:index, :new, :create]
+  before_action :move_to_index, only: [:edit, :update, :destroy]
   
   def index
     @posts = Post.all
@@ -51,4 +52,8 @@ private
 
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def move_to_index
+    redirect_to root_path unless current_user == @post.user
   end
