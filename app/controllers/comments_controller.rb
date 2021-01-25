@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
       redirect_to post_path(@comment.post)
     else
       @post = @comment.post
+      @comments = @post.comments
       render "posts/show"
     end
   end
