@@ -4,7 +4,7 @@
     <%= link_to post.title, post_path(post.id), method: :get, class: :card__title%>
     <p class="card__summary">
       <%= post.catch_copy %>
+      <%= link_to post.user.name, user_path(post.user), class: :card__user %>
     </p>
-    <%= link_to post.user.name, user_path(post.user), class: :card__user %>
   </div>
 </div>
