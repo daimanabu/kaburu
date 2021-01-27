@@ -17,6 +17,8 @@
     <%= f.text_area :concept, class: :form__text %>
   </div>
 
+  <div id="image-list"></div>
+
   <div class="field">
     <%= f.label :image, "画像" %><br />
     <%= f.file_field :image %>
@@ -25,4 +27,5 @@
   <div class="actions">
     <%= f.submit "保存する", class: :form__btn  %>
   </div>
+
 <% end %>
