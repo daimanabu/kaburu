@@ -325,8 +325,45 @@ a {
 .p-searchHeader__title {
   font-size: 24px;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   word-break: break-all;
+  margin-left: 1em;
   -webkit-font-feature-settings: "palt" 1;
   font-feature-settings: "palt" 1;
+}
+
+/* ニュース */
+.articles_news {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.article_news {
+  border-radius: 10px;
+  width: 30%;
+  margin: 20px 15px;
+  color: #d96459;
+  /* background-color: #f2e394; */
+  border: 1px solid #d96459;
+}
+
+.wrapper_news {
+  padding: 5px;
+}
+
+.title_news {
+  border-radius: 10px 10px 0 0;
+  padding: 10px 5px 5px 5px;
+  height: 4.5em;
+}
+
+.source_news {
+  font-size: 0.8em;
+  color: #588c73;
+}
+
+.image_news {
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
