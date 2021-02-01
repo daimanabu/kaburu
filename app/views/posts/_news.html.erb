@@ -1,0 +1,23 @@
+<div class="p-searchHeader__title">
+  人気記事
+</div>
+
+<div class="articles_news">
+  <% @articles["articles"].each do |article| %>
+    <div class="article_news">
+      <div class="title_news">
+        <%= link_to article["title"], article["url"] %>
+      </div>
+      <div class="wrapper_news">
+        <div class="source_news">
+          <%= link_to article["source"]["name"], article["url"] %>
+        </div>
+        <div class="image_news">
+          <%= link_to image_tag(article["urlToImage"]), article["url"], method: :get, :size =>'240x160' %>
+        </div>
+        <div class="content">
+        </div >
+      </div>
+    </div>
+  <% end %>
+</div>

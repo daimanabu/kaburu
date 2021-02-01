@@ -7,14 +7,11 @@
         <%= link_to current_user.name, user_path(current_user.id), class: :greeting__link %>
       </div>
         <% end %>
-
-      <div class="p-searchHeader__title">
-        編集部のおすすめ
-      </div>
       
     <%# // ログインしているときは上記を表示する %>
     <div class="card__wrapper">
       <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
+      <%= render partial: 'news', locals: { post: @articles } %>
       <%= render partial: 'post', collection: @posts %>
     </div>
   </div>
