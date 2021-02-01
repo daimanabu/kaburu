@@ -13,7 +13,7 @@
           <%= link_to article["source"]["name"], article["url"] %>
         </div>
         <div class="image_news">
-          <%= image_tag article["urlToImage"],:size =>'240x160' %>
+          <%= link_to image_tag(article["urlToImage"]), article["url"], method: :get, :size =>'240x160' %>
         </div>
         <div class="content">
         </div >
