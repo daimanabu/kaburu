@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: kaburu_production
-  username: kaburu
-  password: <%= ENV['KABURU_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
