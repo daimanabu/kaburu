@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   
   def index
     @posts = Post.all.order("created_at DESC")
-    api = Rails.application.credentials.news_api[:api_key]
+    api = ENV["NEWS_API_KEY"]
     uri = "https://newsapi.org/v2/top-headlines?country=jp&category=business&apiKey=#{api}"
     article_serialized = open(uri).read
     @articles = JSON.parse(article_serialized)
