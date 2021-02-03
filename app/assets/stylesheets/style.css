@@ -320,6 +320,10 @@ a {
   .table {
     width: 100%;
   }
+
+  .title_news {
+    font-size: 10px;
+  }
 }
 
 .p-searchHeader__title {

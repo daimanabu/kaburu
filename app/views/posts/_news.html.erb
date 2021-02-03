@@ -6,7 +6,7 @@
   <% @articles["articles"].each do |article| %>
     <div class="article_news">
       <div class="title_news">
-        <%= link_to truncate(article["title"], length:50), article["url"] %>
+        <%= link_to truncate(article["title"], length:38), article["url"] %>
       </div>
       <div class="wrapper_news">
         <div class="source_news">
