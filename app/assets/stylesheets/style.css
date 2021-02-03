@@ -144,6 +144,7 @@ a {
 .card__img {
   max-height: 200px;
   margin-bottom: 16px;
+  border-radius: 10px;
 }
 .card__title {
   display: block;
@@ -152,7 +153,9 @@ a {
   font-weight: bold;
 }
 .card__summary {
-  font-size: 16px;
+  font-size: 12px;
+  padding: 5px;
+  color: #666666;
 }
 .card__user {
   display: block;
@@ -361,7 +364,7 @@ a {
 }
 
 .source_news {
-  font-size: 0.8em;
+  font-size: 12px;
   color: #588c73;
 }
 

@@ -3,7 +3,7 @@
   <div class="card__body">
     <%= link_to post.title, post_path(post.id), method: :get, class: :card__title%>
     <p class="card__summary">
-      <%= post.catch_copy.truncate(122) %>
+      <%= post.catch_copy.truncate(138) %>
       <%= link_to post.user.name, user_path(post.user), class: :card__user %>
     </p>
   </div>

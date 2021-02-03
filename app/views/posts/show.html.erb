@@ -8,10 +8,8 @@
           <%= link_to "削除する", post_path(@post.id), method: :delete, class: :prototype__btn %>
         </div>
       <% end %>
-      <p class="prototype__hedding">
-        <%= @post.title %>
-      </p>
-      <%= link_to @post.user.name, user_path(@post.user), class: :prototype__user %>
+      
+      
       
       <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
       <div class="prototype__image">
@@ -19,7 +17,10 @@
       </div>
       <div class="prototype__body">
         <div class="prototype__detail">
-          <p class="detail__title">本文</p>
+          <p class="prototype__hedding">
+            <%= @post.title %>
+            <%= link_to @post.user.name, user_path(@post.user), class: :prototype__user %>
+          </p>
           <p class="detail__message">
             <%= @post.catch_copy %>
           </p>
