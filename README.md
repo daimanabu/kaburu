@@ -44,6 +44,7 @@ EC2導入
 独自ドメインhttps化
 
 # データベース設計
+![er](https://user-images.githubusercontent.com/60860243/106858562-3664b880-6705-11eb-97fb-1bbacac9b330.png)
 
 # ローカルでの動作方法
 
