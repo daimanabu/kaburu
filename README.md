@@ -47,5 +47,19 @@ EC2導入
 ![er](https://user-images.githubusercontent.com/60860243/106858562-3664b880-6705-11eb-97fb-1bbacac9b330.png)
 
 # ローカルでの動作方法
+ruby 2.6.5
+rails 6.0.0
 
+以下からクローンする
+% git clone https://github.com/daimanabu/kaburu.git
 
+反映する
+% bundle install
+% yarn install
+
+DBを作成
+% rails db:create
+% rails db:migrate
+
+Railsを起動する
+% rails s
