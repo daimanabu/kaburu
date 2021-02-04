@@ -1,41 +1,34 @@
-# テーブル設計
+# アプリケーション名
+KABURU
+# アプリケーション概要
+ニュースの閲覧
+記事投稿
+記事に対してコメント
+# URL
+http://kaburu-news.com
+# 利用方法
+ログイン後、記事投稿をすることができる。
+# 目指した課題解決
+２点あります。
 
-## users テーブル
+・人の悩み解決として。
+株の情報特化のニュースサイトを構築しようと考えた。
+類似サイトはいくらでもあるので、悩み解決としては薄いです。
+より特定のジャンルで差別化を図るべきだが、現状はできていない。
 
-| Column   | Type   | Options     |
-| -------- | ------ | ----------- |
-| email    | string | null: false |
-| password | string | null: false |
-| name     | string | null: false |
+・個人として
+NEWSAPIを使ってRailsでサイトを構築できるようになることで、今後類似のニュースサイトを作ることができるようになる。
+別の新しいジャンルや商品が出た時に経験が生かせる。
+新しいジャンル、商品特有の不足に対する人の悩み解決ができると私の経験上から考えられるので有益である。
+# 洗い出した要件
 
-### Association
+# 実装した機能についてのGIFと説明
 
-- has_many :posts
-- has_many :comments
+# 実装予定の機能
 
-## posts テーブル
 
-| Column     | Type       | Options                        |
-| ---------- | ---------- | ------------------------------ |
-| title      | string     | null: false                    |
-| catch_copy | text       | null: false                    |
-| concept    | text       | null: false                    |
-| user       | references | null: false, foreign_key: true |
+# データベース設計
 
-### Association
+# ローカルでの動作方法
 
-- has_many :comments
-- belongs_to :users
 
-## comments テーブル
-
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| text   | text       | null: false                    |
-| user   | references | null: false, foreign_key: true |
-| post   | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :users
-- belongs_to :posts
