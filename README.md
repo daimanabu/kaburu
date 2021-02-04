@@ -1,41 +1,116 @@
-# テーブル設計
+# アプリケーション名
+KABURU
+# アプリケーション概要
 
-## users テーブル
+ニュースの閲覧
 
-| Column   | Type   | Options     |
-| -------- | ------ | ----------- |
-| email    | string | null: false |
-| password | string | null: false |
-| name     | string | null: false |
+記事投稿
 
-### Association
+記事に対してコメント
 
-- has_many :posts
-- has_many :comments
+# URL
 
-## posts テーブル
+http://kaburu-news.com
 
-| Column     | Type       | Options                        |
-| ---------- | ---------- | ------------------------------ |
-| title      | string     | null: false                    |
-| catch_copy | text       | null: false                    |
-| concept    | text       | null: false                    |
-| user       | references | null: false, foreign_key: true |
+# 利用方法
 
-### Association
+ログイン後、記事投稿をすることができる。
 
-- has_many :comments
-- belongs_to :users
+# 目指した課題解決
 
-## comments テーブル
+２点あります。
 
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| text   | text       | null: false                    |
-| user   | references | null: false, foreign_key: true |
-| post   | references | null: false, foreign_key: true |
 
-### Association
+・人の悩み解決として。
 
-- belongs_to :users
-- belongs_to :posts
+株の情報特化のニュースサイトを構築しようと考えた。
+
+類似サイトはいくらでもあるので、悩み解決としては薄いです。
+
+より特定のジャンルで差別化を図るべきだが、現状はできていない。
+
+
+・個人として
+
+
+APIを使ってRailsでサイトを構築できるようになることで、今後類似のサイトを作ることができるようになる。
+
+別の新しいジャンルや商品が出た時に経験が生かせる。
+
+例えば新しいジャンル、商品特有の情報不足に対しそのニュースサイトを構築することで、
+
+特定のジャンルの情報不足という悩み解決ができると私の経験上から考えられるので有益と考えます。
+
+
+# 洗い出した要件
+
+ユーザー管理機能
+
+投稿機能
+
+詳細表示機能
+
+投稿編集機能
+
+削除機能
+
+コメント投稿機能
+
+マイページ機能
+
+エラー日本語化
+
+単体テスト
+
+プレビュー機能
+
+NewsAPIの利用
+
+Heroku導入
+
+S3導入
+
+EC2導入
+
+自動デプロイ
+
+独自ドメイン化
+
+# 実装した機能についてのGIFと説明
+
+トップページはNewsAPIを利用し、人気のあるビジネスニュースが反映される。
+
+# 実装予定の機能
+
+独自ドメインhttps化
+
+# データベース設計
+![er](https://user-images.githubusercontent.com/60860243/106858562-3664b880-6705-11eb-97fb-1bbacac9b330.png)
+
+# ローカルでの動作方法
+動作環境
+
+ruby 2.6.5
+
+rails 6.0.0
+
+
+以下からクローンする
+
+% git clone https://github.com/daimanabu/kaburu.git
+
+反映する
+
+% bundle install
+
+% yarn install
+
+DBを作成
+
+% rails db:create
+
+% rails db:migrate
+
+Railsを起動する
+
+% rails s
